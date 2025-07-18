@@ -1,51 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Car View Website</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header>
-      <div id="header">
-      <h1>Welcome to Car viewing website</h1>
-      <nav>
-        <li> Home</li>
-        <li>Automobiles</li>
-            <ul>
-              <li>Manual</li>
-                  <ul>
-                    <li>Gas</li>
-                  </ul>
-              <li>Automatic</li>
-                 <ul>
-                  <li>Gas</li>
-                  <li>Electric</li>
-                 </ul>
-            </ul>
-        <li>Contact Us</li>
-      </nav>
-</div>
-    </header>
-    <main>
-      <section id="Home">
-        <div id="home-page">
-        <p>This website was made to showcase some of the amazing cars and their respective qualities and relavant info abut the cars </p>
-        </div>
-      </section>
-      <section id="car_brands">
-      <nav>
-        <ul id="brands_nav">
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
-    
-      </section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    </main>
-    <footer>
+  <div class="car-container">
+    <h1 class="car-name" id="carName">Lamborghini Aventador</h1>
 
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    <img id="carImage" src="images/car1.jpg" alt="Car" class="car-img">
+
+    <div class="description" id="carDescription">
+      <p>A true supercar with aggressive styling and a roaring V12 engine.</p>
+      <button onclick="playSound()">Hear Engine Sound</button>
+    </div>
+
+    <div class="specs" id="carSpecs">
+      <p><strong>Engine:</strong> V12 6.5L</p>
+      <p><strong>Model:</strong> Aventador SVJ</p>
+      <p><strong>Brand:</strong> Lamborghini</p>
+      <p><strong>Fuel:</strong> Petrol</p>
+      <p><strong>Gear:</strong> 7-speed ISR</p>
+      <p><strong>0-60 mph:</strong> 2.8s</p>
+      <p><strong>Top Speed:</strong> 217 mph</p>
+    </div>
+
+    <audio id="engineAudio" src="audio/car1.mp3"></audio>
+
+    <button class="nav left" onclick="prevCar()">&lt;</button>
+    <button class="nav right" onclick="nextCar()">&gt;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
