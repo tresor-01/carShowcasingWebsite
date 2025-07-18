@@ -1,7 +1,7 @@
 const cars = [
   {
     name: "Dodge Challenger SRT Demon 170",
-    image: "./images/dodge_demon_170.jpg",
+    image: "./images/2023_dodge_challenger-srt-demon-170_img_1107-48505.jpeg",
     audio: "audio/demon_170.mp3",
     description: "The ultimate street-legal dragster with 1025 horsepower and insane acceleration.",
     specs: [
@@ -16,7 +16,7 @@ const cars = [
   },
   {
     name: "Dodge Challenger SRT Hellcat",
-    image: "./images/hellcat.jpg",
+    image: "./images/porshe 911.jpeg",
     audio: "audio/hellcat.mp3",
     description: "A beastly muscle car known for its loud roar and tire-shredding power.",
     specs: [
@@ -31,7 +31,7 @@ const cars = [
   },
   {
     name: "Bugatti Aventado",
-    image: "./images/bugatti_aventado.jpg",
+    image: "./images/bugati aventado.jpeg",
     audio: "audio/bugatti_aventado.mp3",
     description: "A fictional fusion of Bugatti design and Aventador spirit – pure fantasy.",
     specs: [
@@ -46,7 +46,7 @@ const cars = [
   },
   {
     name: "Lamborghini Urus",
-    image: "./images/lamborghini_urus.jpg",
+    image: "./images/#LamborginiUrus #Lamborginiwallpaper.jpeg",
     audio: "audio/urus.mp3",
     description: "A luxury performance SUV that combines speed, space, and style.",
     specs: [
@@ -61,7 +61,7 @@ const cars = [
   },
   {
     name: "Lamborghini Huracán",
-    image: "./images/huracan.jpg",
+    image: "./images/#lamborghini #huracan #sexycars #coolcars #luxury….jpeg",
     audio: "audio/huracan.mp3",
     description: "A sharp, agile supercar built for excitement and track-ready thrills.",
     specs: [
@@ -76,7 +76,7 @@ const cars = [
   },
   {
     name: "Nissan GT-R GT3",
-    image: "./images/gtr_gt3.jpg",
+    image: "./images/Nissan_GT-R-R35.jpg",
     audio: "audio/gtr_gt3.mp3",
     description: "Track-focused GT-R built to dominate circuits with precision and raw power.",
     specs: [
@@ -91,7 +91,7 @@ const cars = [
   },
   {
     name: "Jaguar F-Type R",
-    image: "./images/jaguar_ftype_r.jpg",
+    image: "./images/#jag #jaguar #British #greatbritain #unitedkingdom….jpeg",
     audio: "audio/ftype_r.mp3",
     description: "A British sports car with elegance, agility, and a roaring V8 heart.",
     specs: [
@@ -106,7 +106,7 @@ const cars = [
   },
   {
     name: "Ferrari 812 GTS",
-    image: "./images/ferrari_812_gts.jpg",
+    image: "./images/Ferrari 812 GTS.jpeg",
     audio: "audio/812_gts.mp3",
     description: "A front-engine Ferrari with convertible thrills and a thunderous V12.",
     specs: [
@@ -121,7 +121,7 @@ const cars = [
   },
   {
     name: "BMW M2",
-    image: "./images/bmw_m2.jpg",
+    image: "./images/BMW M2.jpeg",
     audio: "audio/m2.mp3",
     description: "Compact and aggressive, the M2 delivers precision and everyday fun.",
     specs: [
@@ -136,7 +136,7 @@ const cars = [
   },
   {
     name: "BMW M3",
-    image: "./images/bmw_m3.jpg",
+    image: "./images/bmw m3.jpeg",
     audio: "audio/m3.mp3",
     description: "A legend of the sport sedan world — fast, balanced, and iconic.",
     specs: [
@@ -166,7 +166,7 @@ const cars = [
   },
   {
     name: "BMW M5",
-    image: "./images/bmw_m5.jpg",
+    image: "./images/bmw m5.jpeg",
     audio: "audio/m5.mp3",
     description: "Executive luxury meets track-ready performance — brutal and refined.",
     specs: [
@@ -208,7 +208,40 @@ const cars = [
       "Horsepower: 617 hp",
       "Torque: 553 lb-ft"
     ]
-  }
+  },
+  {
+  name: "Nissan GT‑R R35",
+  image: "./images/nissan_gtr_r35.jpg",
+  audio: "audio/nissan_gtr_r35.mp3",
+  description: "The legendary R35 GT‑R, powered by its 3.8L twin‑turbo V6 (VR38DETT), known for brutal acceleration and precision.",
+  specs: [
+    "Engine: 3.8L Twin‑Turbo V6 (VR38DETT)",
+    "Brand: Nissan",
+    "Model: GT‑R (R35)",
+    "Fuel: Petrol",
+    "Gear: 6‑speed dual‑clutch",
+    "0‑60 mph: ~2.7s",
+    "Top Speed: ~196 mph",
+    "Horsepower: ~565‑600 hp"
+  ]
+},
+{
+  name: "Toyota Supra (A90/A91 or MK4)",
+  image: "./images/toyota_supra.jpg",
+  audio: "audio/supra_turbo.mp3",
+  description: "Iconic Toyota Supra with its legendary turbocharged flat‑6 roar.",
+  specs: [
+    "Engine: 3.0L Turbo I6 (B58)",
+    "Brand: Toyota",
+    "Model: GR Supra",
+    "Fuel: Petrol",
+    "Gear: 8‑speed automatic",
+    "0‑60 mph: ~3.9 s",
+    "Top Speed: ~155 mph (electronically limited)",
+    "Horsepower: ~382 hp"
+  ]
+}
+
 ];
 
 
