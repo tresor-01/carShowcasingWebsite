@@ -16,7 +16,7 @@ const cars = [
   },
   {
     name: "Dodge Challenger SRT Hellcat",
-    image: "./images/porshe 911.jpeg",
+    image: "./images/The Dodge Hellcat .jpeg",
     audio: "audio/hellcat.mp3",
     description: "A beastly muscle car known for its loud roar and tire-shredding power.",
     specs: [
@@ -46,7 +46,7 @@ const cars = [
   },
   {
     name: "Lamborghini Urus",
-    image: "./images/#LamborginiUrus #Lamborginiwallpaper.jpeg",
+    image: "./images/LamborginiUrus .jpeg",
     audio: "audio/urus.mp3",
     description: "A luxury performance SUV that combines speed, space, and style.",
     specs: [
@@ -61,7 +61,7 @@ const cars = [
   },
   {
     name: "Lamborghini Huracán",
-    image: "./images/#lamborghini #huracan #sexycars #coolcars #luxury….jpeg",
+    image: "./images/lamborgini hurucan.jpeg",
     audio: "audio/huracan.mp3",
     description: "A sharp, agile supercar built for excitement and track-ready thrills.",
     specs: [
@@ -91,7 +91,7 @@ const cars = [
   },
   {
     name: "Jaguar F-Type R",
-    image: "./images/#jag #jaguar #British #greatbritain #unitedkingdom….jpeg",
+    image: "./images/jaguar.jpeg",
     audio: "audio/ftype_r.mp3",
     description: "A British sports car with elegance, agility, and a roaring V8 heart.",
     specs: [
@@ -151,7 +151,7 @@ const cars = [
   },
   {
     name: "BMW M4",
-    image: "./images/bmw_m4.jpg",
+    image: "./images/bmw m4.jpeg",
     audio: "audio/m4.mp3",
     description: "Coupe styling meets M performance — thrilling, fast, and sharp.",
     specs: [
@@ -181,7 +181,7 @@ const cars = [
   },
  {
   name: "Porsche 911",
-  image: "./images/porsche_911.jpg",
+  image: "./images/porshe 911.jpeg",
   audio: "audio/porsche_911.mp3",
   description: "Iconic rear‑engine sports car, exhilarating flat‑six roar.",
   specs: [
@@ -196,7 +196,7 @@ const cars = [
 },
   {
     name: "BMW M8 Competition",
-    image: "./images/bmw_m8.jpg",
+    image: "./images/BMW M8 Competition.jpeg",
     audio: "audio/m8.mp3",
     description: "The most powerful M car ever — coupe luxury meets high performance.",
     specs: [
@@ -211,7 +211,7 @@ const cars = [
   },
   {
   name: "Nissan GT‑R R35",
-  image: "./images/nissan_gtr_r35.jpg",
+  image: "./images/Nissan_GT-R-R35.jpg",
   audio: "audio/nissan_gtr_r35.mp3",
   description: "The legendary R35 GT‑R, powered by its 3.8L twin‑turbo V6 (VR38DETT), known for brutal acceleration and precision.",
   specs: [
@@ -227,7 +227,7 @@ const cars = [
 },
 {
   name: "Toyota Supra (A90/A91 or MK4)",
-  image: "./images/toyota_supra.jpg",
+  image: "./images/toyota supra.jpeg",
   audio: "audio/supra_turbo.mp3",
   description: "Iconic Toyota Supra with its legendary turbocharged flat‑6 roar.",
   specs: [
@@ -275,3 +275,12 @@ function prevCar() {
 
 // Initial load
 window.onload = updateCar;
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowRight") {
+    nextCar();
+  } else if (event.key === "ArrowLeft") {
+    prevCar();
+  }
+});
+

@@ -7,6 +7,12 @@
 body, html {
   height: 100%;
   font-family: 'Arial', sans-serif;
+   background-image: url('./images/background.jpg'); /* path to your image */
+  background-size: cover;       /* make the image cover the entire area */
+  background-repeat: no-repeat; /* don't repeat the image */
+  background-position: center;  /* center the image */
+  height: 100vh;                /* full height */
+  margin: 0;
 }
 
 .car-container {
@@ -20,8 +26,15 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.5s ease-in-out;
-}
+  transition: opacity 1s ease-in-out;
+
+   /* width: 100%;
+  height: auto;
+  max-height: 400px; /* or any appropriate value */
+  object-fit: contain; /* ensures the image is not cut */
+  display: block;
+  margin: 0 auto;
+} */
 
 /* Car name top center */
 .car-name {
@@ -29,7 +42,7 @@ body, html {
   top: 20px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: rgb(163, 99, 99);
   font-size: 2.5em;
   text-shadow: 2px 2px 5px black;
   z-index: 2;
