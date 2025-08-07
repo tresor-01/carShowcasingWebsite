@@ -54,7 +54,7 @@ export const cars: Car[] = [
     name: "Gallardo Superleggera",
     brand: "Lamborghini",
     category: "Italian Supercar",
-    image: "src/assets/lambo-gallardo.jpg",
+    image: "src/assets/images/Gallardo Superleggera.jpg",
     price: "$198,000",
     topSpeed: "196 mph",
     acceleration: "3.8s (0-60mph)",
@@ -63,14 +63,14 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "The lightweight legend that redefined modern Lamborghini. Superleggera means 'super light' in Italian.",
     characteristics: ["Carbon Fiber Body", "Weight Reduction", "Track Focus", "Manual Transmission"],
-    audioFile: "/audio/cars/lambo-gallardo.mp3"
+    audioFile: "./src/assets/audio/Gallardo Superleggera.m4a"
   },
   {
     id: "lambo-murcielago",
     name: "Murciélago LP640",
     brand: "Lamborghini", 
     category: "Italian Supercar",
-    image: "src/assets/lambo-murcielago.jpg",
+    image: "src/assets/images/Murcielago.webp",
     price: "$354,000",
     topSpeed: "211 mph", 
     acceleration: "3.4s (0-60mph)",
@@ -79,7 +79,7 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "Named after a legendary fighting bull. The Murciélago brought Lamborghini into the modern era with scissor doors and V12 power.",
     characteristics: ["Scissor Doors", "V12 Symphony", "All-Wheel Drive", "Iconic Design"],
-    audioFile: "/audio/cars/lambo-murcielago.mp3"
+    audioFile: "src/assets/audio/Murcielago.m4a"
   },
   {
     id: "lambo-reventon",
