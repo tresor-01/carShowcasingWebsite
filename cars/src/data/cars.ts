@@ -31,7 +31,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Automatic",
     description: "The ultimate expression of Lamborghini's V12 legacy. The Aventador SVJ combines extreme aerodynamics with track-focused engineering.",
     characteristics: ["Aggressive Aerodynamics", "Carbon Fiber Construction", "Active Suspension", "Track-Tuned"],
-    audioFile: "src/assets/audio/aventadorsvj.mp3"
+    audioFile: "/audio/aventadorsvj.mp3"
   },
   {
     id: "lambo-huracan",
@@ -47,7 +47,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "Perfect balance of performance and daily usability. The Huracán EVO delivers authentic Lamborghini DNA in a more accessible package.",
     characteristics: ["All-Wheel Drive", "Predictive Logic", "Dynamic Steering", "Launch Control"],
-    audioFile: "src/assets/audio/huracan-evo.m4a"
+    audioFile: "/audio/huracan-evo.m4a"
   },
   {
     id: "lambo-gallardo",
@@ -63,7 +63,7 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "The lightweight legend that redefined modern Lamborghini. Superleggera means 'super light' in Italian.",
     characteristics: ["Carbon Fiber Body", "Weight Reduction", "Track Focus", "Manual Transmission"],
-    audioFile: "./src/assets/audio/Gallardo Superleggera.m4a"
+    audioFile: "/audio/Gallardo Superleggera.m4a"
   },
   {
     id: "lambo-murcielago",
@@ -79,7 +79,7 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "Named after a legendary fighting bull. The Murciélago brought Lamborghini into the modern era with scissor doors and V12 power.",
     characteristics: ["Scissor Doors", "V12 Symphony", "All-Wheel Drive", "Iconic Design"],
-    audioFile: "src/assets/audio/Murcielago.m4a"
+    audioFile: "/audio/Murcielago.m4a"
   },
   {
     id: "lambo-reventon",
