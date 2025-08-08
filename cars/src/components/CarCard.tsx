@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Play } from 'lucide-react';
+import { Play, Square } from 'lucide-react';
 import { Car } from '@/data/cars';
 
 interface CarCardProps {
@@ -10,14 +10,39 @@ interface CarCardProps {
 }
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
-  const playEngineSound = () => {
-    const audio = new Audio(car.audioFile);
-    audio.volume = 0.7;
-    audio.play().catch(error => {
-      console.warn('Could not play audio:', error);
-      // Fallback to synthesized sound if audio file not found
-      playFallbackSound();
-    });
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const toggleEngineSound = () => {
+    if (isPlaying) {
+      // Stop the audio
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current = null;
+      }
+      setIsPlaying(false);
+    } else {
+      // Play the audio
+      const audio = new Audio(car.audioFile);
+      audio.volume = 0.7;
+      audioRef.current = audio;
+      
+      audio.addEventListener('ended', () => {
+        setIsPlaying(false);
+        audioRef.current = null;
+      });
+      
+      audio.play().catch(error => {
+        console.warn('Could not play audio:', error);
+        setIsPlaying(false);
+        audioRef.current = null;
+        // Fallback to synthesized sound if audio file not found
+        playFallbackSound();
+      });
+      
+      setIsPlaying(true);
+    }
   };
 
   const playFallbackSound = () => {
@@ -116,12 +141,21 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
         </div>
         
         <Button 
-          onClick={playEngineSound}
+          onClick={toggleEngineSound}
           className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300"
           size="lg"
         >
-          <Play className="mr-2 h-4 w-4" />
-          Play Engine Sound
+          {isPlaying ? (
+            <>
+              <Square className="mr-2 h-4 w-4" />
+              Stop Engine Sound
+            </>
+          ) : (
+            <>
+              <Play className="mr-2 h-4 w-4" />
+              Play Engine Sound
+            </>
+          )}
         </Button>
       </CardContent>
     </Card>
