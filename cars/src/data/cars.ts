@@ -95,9 +95,8 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "Fighter jet-inspired design language. One of the most exclusive Lamborghinis ever made with only 20 units produced.",
     characteristics: ["Fighter Jet Design", "Ultra Exclusive", "Angular Styling", "Limited Production"],
-    audioFile: "/audio/Lamborgini-Reventon.mp3"
+    audioFile: "/audio/Lamborghini-Reventon.mp3"
   },
-
   // 5 Ferraris
   {
     id: "ferrari-sf90",
