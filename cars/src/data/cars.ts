@@ -86,7 +86,7 @@ export const cars: Car[] = [
     name: "Revéntón",
     brand: "Lamborghini",
     category: "Italian Supercar",
-    image: "src/assets/lambo-reventon.jpg",
+    image: "/images/Reventon.webp",
     price: "$1,600,000",
     topSpeed: "211 mph",
     acceleration: "3.4s (0-60mph)", 
@@ -95,7 +95,7 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "Fighter jet-inspired design language. One of the most exclusive Lamborghinis ever made with only 20 units produced.",
     characteristics: ["Fighter Jet Design", "Ultra Exclusive", "Angular Styling", "Limited Production"],
-    audioFile: "/audio/cars/lambo-reventon.mp3"
+    audioFile: "/audio/Lamborgini-Reventon.mp3"
   },
 
   // 5 Ferraris
@@ -104,7 +104,7 @@ export const cars: Car[] = [
     name: "SF90 Stradale",
     brand: "Ferrari",
     category: "Italian Hypercar",
-    image: "src/assets/ferrari-sf90.jpg",
+    image: "/images/ferrari-sf90-stradale.webp",
     price: "$625,000",
     topSpeed: "211 mph",
     acceleration: "2.5s (0-60mph)",
@@ -113,7 +113,7 @@ export const cars: Car[] = [
     transmission: "8-Speed Dual-Clutch",
     description: "Ferrari's first series-production hybrid supercar. Revolutionary technology meets racing heritage in this plug-in hybrid marvel.",
     characteristics: ["Hybrid Technology", "All-Wheel Drive", "Electric Motors", "F1 Technology"],
-    audioFile: "/audio/cars/ferrari-sf90.mp3"
+    audioFile: "/audio/Ferrari-SF90-Stradale.mp3"
   },
   {
     id: "ferrari-f8",
@@ -462,7 +462,7 @@ export const cars: Car[] = [
     name: "Evija",
     brand: "Lotus",
     category: "British Electric Hypercar",
-    image: "/src/assets/lotus-evija.jpg",
+    image: "images/lotus-evija.webp",
     price: "$2,100,000",
     topSpeed: "200+ mph",
     acceleration: "2.9s (0-60mph)",
@@ -471,7 +471,7 @@ export const cars: Car[] = [
     transmission: "Single-Speed",
     description: "Lotus enters the electric age. The Evija maintains the Lotus philosophy of lightweight construction in an all-electric package.",
     characteristics: ["Lightweight Construction", "Electric Performance", "Aerodynamic Efficiency", "Racing DNA"],
-    audioFile: "/audio/cars/lotus-evija.mp3"
+    audioFile: "/audio/Lotus-Emira .mp3"
   },
   {
     id: "bmw-m8",

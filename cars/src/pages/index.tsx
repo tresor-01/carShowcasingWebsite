@@ -161,7 +161,7 @@ const Index = () => {
       <footer className="bg-card border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-muted-foreground">
-            Elite Car Showcase • Experience Automotive Excellence
+            Elite Car Showcase • Experience Automotive Excellence @Tita 2025
           </p>
         </div>
       </footer>
