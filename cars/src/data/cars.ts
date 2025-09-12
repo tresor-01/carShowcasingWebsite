@@ -119,7 +119,7 @@ export const cars: Car[] = [
     name: "F8 Tributo", 
     brand: "Ferrari",
     category: "Italian Supercar",
-    image: "src/assets/ferrari-f8.jpg",
+    image: "./public/images/Ferrari-F8-tributo.webp",
     price: "$280,000",
     topSpeed: "211 mph",
     acceleration: "2.9s (0-60mph)",
@@ -128,14 +128,14 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "A tribute to Ferrari's most successful V8 engine. The F8 delivers exceptional performance with everyday usability.",
     characteristics: ["Twin-Turbo V8", "Rear-Wheel Drive", "Advanced Aerodynamics", "Driver Focused"],
-    audioFile: "/audio/cars/ferrari-f8.mp3"
+    audioFile: "./public/audio/Ferrari-F8-Tributo.mp3"
   },
   {
     id: "ferrari-488",
     name: "488 Pista",
     brand: "Ferrari",
     category: "Italian Supercar", 
-    image: "/src/assets/ferrari-488.jpg",
+    image: "./public/images/ferrari-488-pista.webp",
     price: "$350,000",
     topSpeed: "211 mph",
     acceleration: "2.85s (0-60mph)",
@@ -144,14 +144,14 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "Track-bred intensity meets road-car refinement. The 488 Pista is Ferrari's most track-focused V8 model.",
     characteristics: ["Track Heritage", "Lightweight", "Aerodynamic Package", "Racing DNA"],
-    audioFile: "/audio/cars/ferrari-488.mp3"
+    audioFile: "./public/audio/Ferrari-488.mp3"
   },
   {
     id: "ferrari-laferrari", 
     name: "LaFerrari",
     brand: "Ferrari",
     category: "Italian Hypercar",
-    image: "/src/assets/ferrari-laferrari.jpg",
+    image: "./public/images/Ferrari-LaFerrari-2.webp",
     price: "$1,420,000",
     topSpeed: "217 mph",
     acceleration: "2.4s (0-60mph)",
@@ -160,14 +160,14 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch", 
     description: "The pinnacle of Ferrari engineering. LaFerrari represents the ultimate expression of Ferrari's Formula 1 technology.",
     characteristics: ["F1 Hybrid System", "Carbon Fiber Monocoque", "Active Aerodynamics", "Limited Edition"],
-    audioFile: "/audio/cars/ferrari-laferrari.mp3"
+    audioFile: "./public/audio/Laferrari.mp3"
   },
   {
     id: "ferrari-812",
     name: "812 Superfast",
     brand: "Ferrari",
     category: "Italian GT",
-    image: "/src/assets/ferrari-812.jpg",
+    image: "./public/images/ferrari-812-superfast.webp",
     price: "$365,000", 
     topSpeed: "211 mph",
     acceleration: "2.9s (0-60mph)",
@@ -176,7 +176,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "The most powerful naturally aspirated production car Ferrari has ever built. Pure V12 emotion in its most refined form.", 
     characteristics: ["Naturally Aspirated V12", "Grand Touring", "Rear-Wheel Drive", "Pure Performance"],
-    audioFile: "/audio/cars/ferrari-812.mp3"
+    audioFile: "./public/audio/Ferrari-812-Superfast.mp3"
   },
 
   // 5 Japanese Cars
@@ -185,7 +185,7 @@ export const cars: Car[] = [
     name: "GT-R NISMO",
     brand: "Nissan",
     category: "Japanese Supercar", 
-    image: "src/assets/nissan-gtr.jpg",
+    image: "./public/images/nissan-gt-r-nismo.webp",
     price: "$215,000",
     topSpeed: "205 mph",
     acceleration: "2.5s (0-60mph)",
@@ -194,14 +194,14 @@ export const cars: Car[] = [
     transmission: "6-Speed Dual-Clutch",
     description: "Godzilla evolved. The GT-R NISMO represents the pinnacle of Japanese engineering and track performance.",
     characteristics: ["All-Wheel Drive", "Launch Control", "Track Tuned", "Motorsport Heritage"],
-    audioFile: "/audio/cars/nissan-gtr.mp3"
+    audioFile: "./public/audio/GTR-NISMO.mp3"
   },
   {
     id: "honda-nsx",
     name: "NSX Type S",
     brand: "Honda/Acura",
     category: "Japanese Supercar",
-    image: "/src/assets/honda-nsx.jpg", 
+    image: "./public/images/acura-nsx-type-s.webp", 
     price: "$169,500",
     topSpeed: "191 mph",
     acceleration: "2.9s (0-60mph)",
@@ -210,14 +210,14 @@ export const cars: Car[] = [
     transmission: "9-Speed Dual-Clutch",
     description: "The thinking person's supercar. Honda's hybrid supercar combines efficiency with exhilarating performance.",
     characteristics: ["Sport Hybrid System", "All-Wheel Drive", "Precision Handling", "Advanced Technology"],
-    audioFile: "/audio/cars/honda-nsx.mp3"
+    audioFile: "./public/audio/Acura-NSX-Type-S.mp3"
   },
   {
     id: "toyota-supra",
     name: "GR Supra 3.0",
     brand: "Toyota",
     category: "Japanese Sports Car",
-    image: "src/assets/toyota-supra.jpg",
+    image: "./public/images/Toyota-GR-Supra-Pro-25.webp",
     price: "$55,000",
     topSpeed: "155 mph", 
     acceleration: "4.1s (0-60mph)",
@@ -226,14 +226,14 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "The legend returns. Toyota's GR Supra brings back the iconic nameplate with modern BMW-derived engineering.",
     characteristics: ["Rear-Wheel Drive", "Balanced Chassis", "Turbo Power", "Sports Car DNA"],
-    audioFile: "/audio/cars/toyota-supra.mp3"
+    audioFile: "./public/audio/Toyota-Supra-GR 3.0 .mp3"
   },
   {
     id: "subaru-wrx",
     name: "WRX STI", 
     brand: "Subaru",
     category: "Japanese Rally Car",
-    image: "/src/assets/subaru-wrx.jpg",
+    image: "./public/images/subaru-wrx-sti.webp",
     price: "$38,000",
     topSpeed: "159 mph",
     acceleration: "5.2s (0-60mph)",
@@ -242,14 +242,14 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "Rally-bred performance for the street. The WRX STI delivers all-weather capability with motorsport DNA.",
     characteristics: ["All-Wheel Drive", "Rally Heritage", "Boxer Engine", "Manual Transmission"],
-    audioFile: "/audio/cars/subaru-wrx.mp3"
+    audioFile: "./public/audio/Subaru-wrx-sti.mp3"
   },
   {
     id: "mazda-rx7",
     name: "RX-7 FD",
     brand: "Mazda", 
     category: "Japanese Sports Car",
-    image: "/src/assets/mazda-rx7.jpg",
+    image: "./public/images/mazda-rx7-fd.webp",
     price: "$85,000",
     topSpeed: "158 mph",
     acceleration: "4.9s (0-60mph)",
@@ -258,7 +258,7 @@ export const cars: Car[] = [
     transmission: "5-Speed Manual",
     description: "Rotary-powered perfection. The RX-7 FD represents the pinnacle of rotary engine technology and Japanese sports car design.",
     characteristics: ["Rotary Engine", "Perfect Balance", "Lightweight", "Pure Driving"],
-    audioFile: "/audio/cars/mazda-rx7.mp3"
+    audioFile: "./public/audio/mazda-rx7-fd.mp3"
   },
 
   // 5 American Cars
@@ -267,7 +267,7 @@ export const cars: Car[] = [
     name: "Challenger SRT Hellcat",
     brand: "Dodge",
     category: "American Muscle",
-    image: "src/assets/dodge-challenger.jpg",
+    image: "./public/images/challenger-srt-hellcat.webp",
     price: "$90,000",
     topSpeed: "199 mph",
     acceleration: "3.4s (0-60mph)", 
@@ -276,14 +276,14 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "Supercharged mayhem. The Hellcat brings old-school muscle car attitude with modern supercar performance.",
     characteristics: ["Supercharged V8", "Retro Styling", "Drag Strip Ready", "Raw Power"],
-    audioFile: "/audio/cars/dodge-challenger.mp3"
+    audioFile: "./public/audio/Challenger SRT Hellcat .mp3"
   },
   {
     id: "ford-mustang",
     name: "Mustang Shelby GT500",
     brand: "Ford",
     category: "American Muscle",
-    image: "src/assets/ford-mustang.jpg",
+    image: "./public/images/mustang_shelby_gt500.webp",
     price: "$80,000",
     topSpeed: "180 mph",
     acceleration: "3.3s (0-60mph)",
@@ -292,7 +292,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "The most powerful Mustang ever. Shelby GT500 combines track capability with street presence.",
     characteristics: ["Supercharged V8", "Track Package", "Aerodynamics", "Racing Heritage"],
-    audioFile: "/audio/cars/ford-mustang.mp3"
+    audioFile: "./public/audio/shelby-gt500.mp3"
   },
   {
     id: "chevrolet-corvette",
