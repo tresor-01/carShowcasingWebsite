@@ -119,7 +119,7 @@ export const cars: Car[] = [
     name: "F8 Tributo", 
     brand: "Ferrari",
     category: "Italian Supercar",
-    image: "./public/images/Ferrari-F8-tributo.webp",
+    image: "/images/Ferrari-F8-tributo.webp",
     price: "$280,000",
     topSpeed: "211 mph",
     acceleration: "2.9s (0-60mph)",
@@ -128,14 +128,14 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "A tribute to Ferrari's most successful V8 engine. The F8 delivers exceptional performance with everyday usability.",
     characteristics: ["Twin-Turbo V8", "Rear-Wheel Drive", "Advanced Aerodynamics", "Driver Focused"],
-    audioFile: "./public/audio/Ferrari-F8-Tributo.mp3"
+    audioFile: "/audio/Ferrari-F8-Tributo.mp3"
   },
   {
     id: "ferrari-488",
     name: "488 Pista",
     brand: "Ferrari",
     category: "Italian Supercar", 
-    image: "./public/images/ferrari-488-pista.webp",
+    image: "/images/ferrari-488-pista.webp",
     price: "$350,000",
     topSpeed: "211 mph",
     acceleration: "2.85s (0-60mph)",
@@ -144,14 +144,14 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "Track-bred intensity meets road-car refinement. The 488 Pista is Ferrari's most track-focused V8 model.",
     characteristics: ["Track Heritage", "Lightweight", "Aerodynamic Package", "Racing DNA"],
-    audioFile: "./public/audio/Ferrari-488.mp3"
+    audioFile: "/audio/Ferrari-488.mp3"
   },
   {
     id: "ferrari-laferrari", 
     name: "LaFerrari",
     brand: "Ferrari",
     category: "Italian Hypercar",
-    image: "./public/images/Ferrari-LaFerrari-2.webp",
+    image: "/images/Ferrari-LaFerrari-2.webp",
     price: "$1,420,000",
     topSpeed: "217 mph",
     acceleration: "2.4s (0-60mph)",
@@ -160,7 +160,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch", 
     description: "The pinnacle of Ferrari engineering. LaFerrari represents the ultimate expression of Ferrari's Formula 1 technology.",
     characteristics: ["F1 Hybrid System", "Carbon Fiber Monocoque", "Active Aerodynamics", "Limited Edition"],
-    audioFile: "./public/audio/Laferrari.mp3"
+    audioFile: "/audio/Laferrari.mp3"
   },
   {
     id: "ferrari-812",
