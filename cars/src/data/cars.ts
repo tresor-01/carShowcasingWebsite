@@ -167,7 +167,7 @@ export const cars: Car[] = [
     name: "812 Superfast",
     brand: "Ferrari",
     category: "Italian GT",
-    image: "./public/images/ferrari-812-superfast.webp",
+    image: "/images/ferrari-812-superfast.webp",
     price: "$365,000", 
     topSpeed: "211 mph",
     acceleration: "2.9s (0-60mph)",
@@ -176,7 +176,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "The most powerful naturally aspirated production car Ferrari has ever built. Pure V12 emotion in its most refined form.", 
     characteristics: ["Naturally Aspirated V12", "Grand Touring", "Rear-Wheel Drive", "Pure Performance"],
-    audioFile: "./public/audio/Ferrari-812-Superfast.mp3"
+    audioFile: "/audio/Ferrari-812-Superfast.mp3"
   },
 
   // 5 Japanese Cars
@@ -185,7 +185,7 @@ export const cars: Car[] = [
     name: "GT-R NISMO",
     brand: "Nissan",
     category: "Japanese Supercar", 
-    image: "./public/images/nissan-gt-r-nismo.webp",
+    image: "/images/nissan-gt-r-nismo.webp",
     price: "$215,000",
     topSpeed: "205 mph",
     acceleration: "2.5s (0-60mph)",
@@ -194,14 +194,14 @@ export const cars: Car[] = [
     transmission: "6-Speed Dual-Clutch",
     description: "Godzilla evolved. The GT-R NISMO represents the pinnacle of Japanese engineering and track performance.",
     characteristics: ["All-Wheel Drive", "Launch Control", "Track Tuned", "Motorsport Heritage"],
-    audioFile: "./public/audio/GTR-NISMO.mp3"
+    audioFile: "/audio/GTR-NISMO.mp3"
   },
   {
     id: "honda-nsx",
     name: "NSX Type S",
     brand: "Honda/Acura",
     category: "Japanese Supercar",
-    image: "./public/images/acura-nsx-type-s.webp", 
+    image: "/images/acura-nsx-type-s.webp", 
     price: "$169,500",
     topSpeed: "191 mph",
     acceleration: "2.9s (0-60mph)",
@@ -210,14 +210,14 @@ export const cars: Car[] = [
     transmission: "9-Speed Dual-Clutch",
     description: "The thinking person's supercar. Honda's hybrid supercar combines efficiency with exhilarating performance.",
     characteristics: ["Sport Hybrid System", "All-Wheel Drive", "Precision Handling", "Advanced Technology"],
-    audioFile: "./public/audio/Acura-NSX-Type-S.mp3"
+    audioFile: "/audio/Acura-NSX-Type-S.mp3"
   },
   {
     id: "toyota-supra",
     name: "GR Supra 3.0",
     brand: "Toyota",
     category: "Japanese Sports Car",
-    image: "./public/images/Toyota-GR-Supra-Pro-25.webp",
+    image: "/images/Toyota-GR-Supra-Pro-25.webp",
     price: "$55,000",
     topSpeed: "155 mph", 
     acceleration: "4.1s (0-60mph)",
@@ -226,14 +226,14 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "The legend returns. Toyota's GR Supra brings back the iconic nameplate with modern BMW-derived engineering.",
     characteristics: ["Rear-Wheel Drive", "Balanced Chassis", "Turbo Power", "Sports Car DNA"],
-    audioFile: "./public/audio/Toyota-Supra-GR 3.0 .mp3"
+    audioFile: "/audio/Toyota-Supra-GR 3.0 .mp3"
   },
   {
     id: "subaru-wrx",
     name: "WRX STI", 
     brand: "Subaru",
     category: "Japanese Rally Car",
-    image: "./public/images/subaru-wrx-sti.webp",
+    image: "/images/subaru-wrx-sti.webp",
     price: "$38,000",
     topSpeed: "159 mph",
     acceleration: "5.2s (0-60mph)",
@@ -242,14 +242,14 @@ export const cars: Car[] = [
     transmission: "6-Speed Manual",
     description: "Rally-bred performance for the street. The WRX STI delivers all-weather capability with motorsport DNA.",
     characteristics: ["All-Wheel Drive", "Rally Heritage", "Boxer Engine", "Manual Transmission"],
-    audioFile: "./public/audio/Subaru-wrx-sti.mp3"
+    audioFile: "/audio/Subaru-wrx-sti.mp3"
   },
   {
     id: "mazda-rx7",
     name: "RX-7 FD",
     brand: "Mazda", 
     category: "Japanese Sports Car",
-    image: "./public/images/mazda-rx7-fd.webp",
+    image: "/images/mazda-rx7-fd.webp",
     price: "$85,000",
     topSpeed: "158 mph",
     acceleration: "4.9s (0-60mph)",
@@ -258,7 +258,7 @@ export const cars: Car[] = [
     transmission: "5-Speed Manual",
     description: "Rotary-powered perfection. The RX-7 FD represents the pinnacle of rotary engine technology and Japanese sports car design.",
     characteristics: ["Rotary Engine", "Perfect Balance", "Lightweight", "Pure Driving"],
-    audioFile: "./public/audio/mazda-rx7-fd.mp3"
+    audioFile: "/audio/mazda-rx7-fd.mp3"
   },
 
   // 5 American Cars
@@ -267,7 +267,7 @@ export const cars: Car[] = [
     name: "Challenger SRT Hellcat",
     brand: "Dodge",
     category: "American Muscle",
-    image: "./public/images/challenger-srt-hellcat.webp",
+    image: "/images/challenger-srt-hellcat.webp",
     price: "$90,000",
     topSpeed: "199 mph",
     acceleration: "3.4s (0-60mph)", 
@@ -276,14 +276,14 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "Supercharged mayhem. The Hellcat brings old-school muscle car attitude with modern supercar performance.",
     characteristics: ["Supercharged V8", "Retro Styling", "Drag Strip Ready", "Raw Power"],
-    audioFile: "./public/audio/Challenger SRT Hellcat .mp3"
+    audioFile: "/audio/Challenger SRT Hellcat .mp3"
   },
   {
     id: "ford-mustang",
     name: "Mustang Shelby GT500",
     brand: "Ford",
     category: "American Muscle",
-    image: "./public/images/mustang_shelby_gt500.webp",
+    image: "/images/mustang_shelby_gt500.webp",
     price: "$80,000",
     topSpeed: "180 mph",
     acceleration: "3.3s (0-60mph)",
@@ -292,14 +292,15 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "The most powerful Mustang ever. Shelby GT500 combines track capability with street presence.",
     characteristics: ["Supercharged V8", "Track Package", "Aerodynamics", "Racing Heritage"],
-    audioFile: "./public/audio/shelby-gt500.mp3"
+    audioFile: "/audio/shelby-gt500.mp3"
   },
+  // from here cars have no audio files only images 
   {
     id: "chevrolet-corvette",
     name: "Corvette Z06",
     brand: "Chevrolet", 
     category: "American Sports Car",
-    image: "src/assets/chevrolet-corvette.jpg",
+    image: "/images/chevrolet-corvette.webp",
     price: "$112,000",
     topSpeed: "194 mph",
     acceleration: "2.6s (0-60mph)",
@@ -308,14 +309,14 @@ export const cars: Car[] = [
     transmission: "8-Speed Dual-Clutch",
     description: "America's supercar refined. The C8 Z06 brings mid-engine layout and flat-plane crank V8 to the Corvette legacy.",
     characteristics: ["Mid-Engine Layout", "Flat-Plane Crank", "Track Focus", "American Engineering"],
-    audioFile: "/audio/cars/chevrolet-corvette.mp3"
+    audioFile: "/audio/chevrolet-corvette.mp3"
   },
   {
     id: "ford-gt",
     name: "GT",
     brand: "Ford", 
     category: "American Supercar",
-    image: "/src/assets/ford-gt.jpg",
+    image: "/images/ford-gt.webp",
     price: "$500,000",
     topSpeed: "218 mph",
     acceleration: "3.0s (0-60mph)",
@@ -331,7 +332,7 @@ export const cars: Car[] = [
     name: "CTS-V",
     brand: "Cadillac",
     category: "American Luxury Performance",
-    image: "/src/assets/cadillac-cts-v.jpg",
+    image: "/images/cadillac-cts-v.webp",
     price: "$88,000",
     topSpeed: "200 mph",
     acceleration: "3.7s (0-60mph)",
@@ -349,7 +350,7 @@ export const cars: Car[] = [
     name: "720S",
     brand: "McLaren",
     category: "British Supercar", 
-    image: "src/assets/mclaren-720s.jpg",
+    image: "/images/mclaren-720s.webp",
     price: "$300,000",
     topSpeed: "212 mph",
     acceleration: "2.8s (0-60mph)",
@@ -365,7 +366,7 @@ export const cars: Car[] = [
     name: "911 Turbo S",
     brand: "Porsche",
     category: "German Sports Car",
-    image: "src/assets/porsche-911.jpg", 
+    image: "/images/porsche-911.webp", 
     price: "$230,000",
     topSpeed: "205 mph",
     acceleration: "2.6s (0-60mph)",
@@ -381,7 +382,7 @@ export const cars: Car[] = [
     name: "DB11 AMR",
     brand: "Aston Martin",
     category: "British GT",
-    image: "/src/assets/aston-martin-db11.jpg",
+    image: "/images/aston-martin-db11.webp",
     price: "$241,000",
     topSpeed: "208 mph",
     acceleration: "3.7s (0-60mph)",
@@ -397,7 +398,7 @@ export const cars: Car[] = [
     name: "Chiron",
     brand: "Bugatti",
     category: "French Hypercar",
-    image: "src/assets/bugatti-chiron.jpg",
+    image: "/images/bugatti-chiron.webp",
     price: "$3,000,000",
     topSpeed: "261 mph", 
     acceleration: "2.3s (0-60mph)",
@@ -413,7 +414,7 @@ export const cars: Car[] = [
     name: "Jesko",
     brand: "Koenigsegg",
     category: "Swedish Hypercar",
-    image: "/src/assets/koenigsegg-jesko.jpg",
+    image: "/images/koenigsegg-jesko.webp",
     price: "$3,000,000",
     topSpeed: "330 mph",
     acceleration: "2.5s (0-60mph)",
@@ -429,7 +430,7 @@ export const cars: Car[] = [
     name: "Huayra BC",
     brand: "Pagani",
     category: "Italian Hypercar",
-    image: "/src/assets/pagani-huayra.jpg",
+    image: "/images/pagani-huayra.webp",
     price: "$2,800,000",
     topSpeed: "238 mph",
     acceleration: "2.8s (0-60mph)",
@@ -445,7 +446,7 @@ export const cars: Car[] = [
     name: "Nevera",
     brand: "Rimac", 
     category: "Electric Hypercar",
-    image: "/src/assets/rimac-nevera.jpg",
+    image: "/images/rimac-nevera.webp",
     price: "$2,400,000",
     topSpeed: "258 mph",
     acceleration: "1.85s (0-60mph)",
@@ -461,7 +462,7 @@ export const cars: Car[] = [
     name: "Evija",
     brand: "Lotus",
     category: "British Electric Hypercar",
-    image: "images/lotus-evija.webp",
+    image: "/images/lotus-evija.webp",
     price: "$2,100,000",
     topSpeed: "200+ mph",
     acceleration: "2.9s (0-60mph)",
@@ -477,7 +478,7 @@ export const cars: Car[] = [
     name: "M8 Competition",
     brand: "BMW",
     category: "German GT",
-    image: "/src/assets/bmw-m8.jpg",
+    image: "/images/bmw-m8.webp",
     price: "$146,000",
     topSpeed: "190 mph",
     acceleration: "3.0s (0-60mph)",
@@ -493,7 +494,7 @@ export const cars: Car[] = [
     name: "AMG GT Black Series", 
     brand: "Mercedes-AMG",
     category: "German Track Car",
-    image: "/src/assets/mercedes-amg-gt.jpg",
+    image: "/images/mercedes-amg-gt.webp",
     price: "$335,000",
     topSpeed: "202 mph",
     acceleration: "3.1s (0-60mph)",
