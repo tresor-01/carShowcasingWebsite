@@ -325,7 +325,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "Le Mans legend reborn. The Ford GT carries forward the racing heritage of the original GT40 with modern materials and technology.",
     characteristics: ["Carbon Fiber Construction", "Racing Heritage", "Active Aerodynamics", "Limited Production"],
-    audioFile: "/audio/cars/ford-gt.mp3"
+    audioFile: "/audio/ford-gt.mp3"
   },
   {
     id: "cadillac-cts-v", 
@@ -341,7 +341,7 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "Luxury meets performance. The CTS-V delivers supercar power in a refined luxury sedan package.",
     characteristics: ["Luxury Interior", "Supercharged V8", "Track Capable", "Daily Usable"],
-    audioFile: "/audio/cars/cadillac-cts-v.mp3"
+    audioFile: "/audio/cadillac-cts-v.mp3"
   },
 
   // 10 Other Cars of Choice
@@ -359,7 +359,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "Formula 1 technology for the road. The 720S represents McLaren's pursuit of automotive perfection.",
     characteristics: ["Carbon Fiber Monocoque", "Active Suspension", "Dihedral Doors", "F1 Technology"],
-    audioFile: "/audio/cars/mclaren-720s.mp3"
+    audioFile: "/audio/mclaren-720s.mp3"
   },
   {
     id: "porsche-911",
@@ -375,7 +375,7 @@ export const cars: Car[] = [
     transmission: "8-Speed PDK",
     description: "The benchmark sports car. The 911 Turbo S combines everyday usability with supercar performance.",
     characteristics: ["Rear-Engine Layout", "All-Weather Capability", "Timeless Design", "German Engineering"],
-    audioFile: "/audio/cars/porsche-911.mp3"
+    audioFile: "/audio/porsche-911.mp3"
   },
   {
     id: "aston-martin-db11",
@@ -391,7 +391,7 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "British elegance meets performance. The DB11 AMR represents Aston Martin's racing heritage in grand touring form.",
     characteristics: ["V12 Symphony", "British Craftsmanship", "Grand Touring", "Elegant Design"],
-    audioFile: "/audio/cars/aston-martin-db11.mp3"
+    audioFile: "/audio/aston-martin-db11.mp3"
   },
   {
     id: "bugatti-chiron",
@@ -407,7 +407,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "The pinnacle of automotive engineering. The Chiron pushes the boundaries of what's possible in a road car.",
     characteristics: ["Quad-Turbo W16", "All-Wheel Drive", "Luxury Interior", "Engineering Marvel"],
-    audioFile: "/audio/cars/bugatti-chiron.mp3"
+    audioFile: "/audio/bugatti-chiron.mp3"
   },
   {
     id: "koenigsegg-jesko",
@@ -423,7 +423,7 @@ export const cars: Car[] = [
     transmission: "9-Speed Multi-Clutch",
     description: "Swedish engineering excellence. The Jesko represents the ultimate in lightweight construction and aerodynamic efficiency.",
     characteristics: ["Carbon Fiber Everything", "Active Aerodynamics", "Lightweight Design", "Track Focused"],
-    audioFile: "/audio/cars/koenigsegg-jesko.mp3"
+    audioFile: "/audio/koenigsegg-jesko.mp3"
   },
   {
     id: "pagani-huayra",
@@ -439,7 +439,7 @@ export const cars: Car[] = [
     transmission: "7-Speed Single-Clutch",
     description: "Automotive art in motion. The Huayra BC combines Italian craftsmanship with cutting-edge technology.",
     characteristics: ["Handcrafted Interior", "Carbon-Titanium Construction", "Active Aero", "Artistic Design"],
-    audioFile: "/audio/cars/pagani-huayra.mp3"
+    audioFile: "/audio/pagani-huayra.mp3"
   },
   {
     id: "rimac-nevera",
@@ -455,7 +455,7 @@ export const cars: Car[] = [
     transmission: "Single-Speed",
     description: "The future of performance. The Nevera proves that electric vehicles can exceed the performance of any combustion engine.",
     characteristics: ["All-Electric Powertrain", "Torque Vectoring", "Advanced AI", "Record Breaking"],
-    audioFile: "/audio/cars/rimac-nevera.mp3"
+    audioFile: "/audio/rimac-nevera.mp3"
   },
   {
     id: "lotus-evija",
@@ -487,7 +487,7 @@ export const cars: Car[] = [
     transmission: "8-Speed Automatic",
     description: "German precision meets grand touring luxury. The M8 Competition delivers supercar performance with luxury car refinement.",
     characteristics: ["Twin-Turbo V8", "All-Wheel Drive", "Luxury Interior", "Grand Touring"],
-    audioFile: "/audio/cars/bmw-m8.mp3"
+    audioFile: "/audio/bmw-m8.mp3"
   },
   {
     id: "mercedes-amg-gt",
@@ -503,6 +503,6 @@ export const cars: Car[] = [
     transmission: "7-Speed Dual-Clutch",
     description: "Track-bred intensity. The AMG GT Black Series represents the most extreme road-going Mercedes ever built.",
     characteristics: ["Track-Focused", "Aerodynamic Package", "Lightweight", "Racing Heritage"],
-    audioFile: "/audio/cars/mercedes-amg-gt.mp3"
+    audioFile: "/audio/mercedes-amg-gt.mp3"
   }
 ];

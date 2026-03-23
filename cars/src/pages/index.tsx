@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { cars } from '@/data/cars';
 import CarCard from '@/components/CarCard';
+import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Search, Filter, X } from 'lucide-react';
+import { useCar } from '@/context/CarContext';
+import { parsePrice, parseSpeed, parseHP, parseAcc } from '@/lib/utils';
 
 const categories = [
   'All',
@@ -27,144 +33,150 @@ const categories = [
 ];
 
 const Index = () => {
+  const { 
+    searchQuery, setSearchQuery, 
+    sortBy, setSortBy, 
+    selectedBrand, setSelectedBrand 
+  } = useCar();
+
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isFilterVisible, setIsFilterVisible] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-  const lastScrollY = useRef(0);
-  const hideTimer = useRef<NodeJS.Timeout | null>(null);
+  const [playingId, setPlayingId] = useState<string | null>(null);
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
+  const [isFilterVisible, setIsFilterVisible] = useState(true);
 
-  const filteredCars = selectedCategory === 'All' 
-    ? cars 
-    : cars.filter(car => car.category === selectedCategory);
+  // Derive unique brands from cars
+  const brands = ['All', ...Array.from(new Set(cars.map(car => car.brand))).sort()];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollingDown = currentScrollY > lastScrollY.current;
-      const scrollingUp = currentScrollY < lastScrollY.current;
+  // Filtering Logic
+  const filteredCars = cars.filter(car => {
+    const matchesCategory = selectedCategory === 'All' || car.category === selectedCategory;
+    const matchesBrand = selectedBrand === 'All' || car.brand === selectedBrand;
+    const matchesSearch = car.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          car.brand.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesBrand && matchesSearch;
+  });
 
-      if (scrollingDown && currentScrollY > 100) {
-        setIsFilterVisible(false);
-        clearHideTimer();
-      } else if (scrollingUp && currentScrollY > 100) {
-        setIsFilterVisible(true);
-        startHideTimer();
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    const startHideTimer = () => {
-      clearHideTimer();
-      if (!isHovering) {
-        hideTimer.current = setTimeout(() => {
-          setIsFilterVisible(false);
-        }, 2000);
-      }
-    };
-
-    const clearHideTimer = () => {
-      if (hideTimer.current) {
-        clearTimeout(hideTimer.current);
-        hideTimer.current = null;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearHideTimer();
-    };
-  }, [isHovering]);
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-    setIsFilterVisible(true);
-    if (hideTimer.current) {
-      clearTimeout(hideTimer.current);
-      hideTimer.current = null;
+  // Sorting Logic
+  const sortedCars = [...filteredCars].sort((a, b) => {
+    switch (sortBy) {
+      case 'Price: Low to High': return parsePrice(a.price) - parsePrice(b.price);
+      case 'Price: High to Low': return parsePrice(b.price) - parsePrice(a.price);
+      case 'Horsepower: High to Low': return parseHP(b.horsepower) - parseHP(a.horsepower);
+      case 'Top Speed: High to Low': return parseSpeed(b.topSpeed) - parseSpeed(a.topSpeed);
+      case '0-60: Fast to Slow': return parseAcc(a.acceleration) - parseAcc(b.acceleration);
+      default: return 0; // Default order
     }
+  });
+
+  const handlePlay = (id: string | null, audio: HTMLAudioElement | null) => {
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+    setPlayingId(id);
+    setCurrentAudio(audio);
   };
 
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-    hideTimer.current = setTimeout(() => {
-      setIsFilterVisible(false);
-    }, 2000);
-  };
+  const clearFilters = () => {
+      setSearchQuery('');
+      setSortBy('Default');
+      setSelectedBrand('All');
+      setSelectedCategory('All');
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Hero Section */}
-      <div className="relative py-20 px-4 text-center bg-gradient-primary">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary-foreground">
-            Elite Car Showcase
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8">
-            Experience the world's most extraordinary automobiles with authentic engine sounds
-          </p>
-          <Badge variant="secondary" className="text-lg px-6 py-2 bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30">
-            {cars.length} Premium Vehicles
-          </Badge>
-        </div>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
 
-      {/* Scroll-Aware Filter Bar */}
-      <div className="sticky top-0 z-10">
-        <div 
-          className={`transform transition-transform duration-300 ease-out bg-background/95 backdrop-blur-md border-b border-border shadow-lg ${
-            isFilterVisible ? 'translate-y-0' : '-translate-y-full'
-          }`}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="max-w-7xl mx-auto px-4 py-6">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">Filter by Category</h2>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`transition-all duration-200 ${
-                    selectedCategory === category 
-                      ? 'bg-gradient-primary border-primary shadow-glow' 
-                      : 'border-accent/40 hover:border-accent hover:bg-accent/10'
-                  }`}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
+      <main className="pt-24 pb-12 px-4 container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+          <div>
+            <h1 className="text-4xl font-bold mb-2">Supercar Gallery</h1>
+            <p className="text-muted-foreground">Discover the world's most exclusive machines.</p>
+          </div>
+          
+          <div className="flex flex-wrap items-center gap-2">
+             <div className="relative w-full md:w-64">
+                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search cars..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-8"
+                />
+             </div>
+             
+             <Select value={selectedBrand} onValueChange={setSelectedBrand}>
+                <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Brand" />
+                </SelectTrigger>
+                <SelectContent>
+                    {brands.map(brand => (
+                        <SelectItem key={brand} value={brand}>{brand}</SelectItem>
+                    ))}
+                </SelectContent>
+             </Select>
+
+             <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Sort By" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectItem value="Default">Default</SelectItem>
+                    <SelectItem value="Price: Low to High">Price: Low to High</SelectItem>
+                    <SelectItem value="Price: High to Low">Price: High to Low</SelectItem>
+                    <SelectItem value="Horsepower: High to Low">Horsepower: High to Low</SelectItem>
+                    <SelectItem value="Top Speed: High to Low">Top Speed: High to Low</SelectItem>
+                    <SelectItem value="0-60: Fast to Slow">0-60: Fast to Slow</SelectItem>
+                </SelectContent>
+             </Select>
+
+             {(searchQuery || selectedBrand !== 'All' || sortBy !== 'Default' || selectedCategory !== 'All') && (
+                 <Button variant="ghost" size="icon" onClick={clearFilters} title="Clear Filters">
+                     <X className="w-4 h-4" />
+                 </Button>
+             )}
           </div>
         </div>
-      </div>
 
-      {/* Cars Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCars.map((car) => (
-            <CarCard key={car.id} car={car} />
-          ))}
+        {/* Categories (Scrollable) */}
+        <div className="relative mb-8">
+            <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar mask-gradient-right">
+                {categories.map((category) => (
+                    <Badge
+                        key={category}
+                        variant={selectedCategory === category ? "default" : "outline"}
+                        className="cursor-pointer whitespace-nowrap px-4 py-2 hover:bg-primary/90 hover:text-primary-foreground transition-colors"
+                        onClick={() => setSelectedCategory(category)}
+                    >
+                        {category}
+                    </Badge>
+                ))}
+            </div>
         </div>
-        
-        {filteredCars.length === 0 && (
+
+        {/* Results */}
+        {sortedCars.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {sortedCars.map((car) => (
+              <CarCard
+                key={car.id}
+                car={car}
+                playingId={playingId}
+                onPlay={handlePlay}
+              />
+            ))}
+          </div>
+        ) : (
           <div className="text-center py-20">
-            <p className="text-xl text-muted-foreground">No cars found in this category.</p>
+            <h3 className="text-2xl font-bold mb-2">No cars found</h3>
+            <p className="text-muted-foreground">Try adjusting your filters or search query.</p>
+            <Button variant="link" onClick={clearFilters} className="mt-4">
+                Clear all filters
+            </Button>
           </div>
         )}
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            Elite Car Showcase • Experience Automotive Excellence @Tita 2025
-          </p>
-        </div>
-      </footer>
+      </main>
     </div>
   );
 };
