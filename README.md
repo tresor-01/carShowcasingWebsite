@@ -3,10 +3,14 @@
 In this project I used only four technologies which are namely Html, csss, javascript and React . This Web site showcase some of the amazing cars that many people admire and providing the details on each and every car.This project started on 12/06/2025
 
 
+## The front-end
+
+- [Normal_web](./Normal_Web/) This file contains Html, Css and Javascript codes to showcase some different awesome cars, its not perfect as it is and it's still  missing some styling and features had been busy working on the react one 
+- [car_view](./car_view/)This is a react app that also show cases awesome cars . some cars don't have sound they have just a random sound however though i will be working on that later
 
 
-- [Normal_web](./Normal_Web/) This file contains Html, Css and Javascript codes to showcase some different awesome cars
-- [car_view](./car_view/)This is a react app that also show cases awesome cars 
+  ## The backend
+  The backend is not done as of now you are are reading this but its still in work locally 
 
 
 
