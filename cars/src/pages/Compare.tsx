@@ -2,9 +2,9 @@ import React from 'react';
 import { useCar } from '@/context/CarContext';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
-import { Trash2, Scale, ArrowRight } from 'lucide-react';
+import { Trash2, Scale, ArrowRight, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { parsePrice, parseSpeed, parseAcc, parseHP } from '@/lib/utils';
+import { formatPrice, formatSpeed, formatAcc, formatHP } from '@/lib/utils';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const Compare = () => {
@@ -13,7 +13,7 @@ const Compare = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-24 pb-12 px-4 container mx-auto">
         <div className="flex flex-col items-center mb-12">
           <div className="p-3 bg-blue-500/10 rounded-full mb-4">
@@ -21,8 +21,8 @@ const Compare = () => {
           </div>
           <h1 className="text-4xl font-bold mb-2">Compare Vehicles</h1>
           <p className="text-muted-foreground">
-            {compareList.length > 0 
-              ? `Comparing ${compareList.length} vehicles` 
+            {compareList.length > 0
+              ? `Comparing ${compareList.length} of 3 vehicles`
               : "Select cars to compare specs side-by-side"}
           </p>
         </div>
@@ -46,9 +46,9 @@ const Compare = () => {
                         <div className="flex flex-col items-center gap-4">
                           <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-white/10">
                             <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
-                            <Button 
-                              variant="destructive" 
-                              size="icon" 
+                            <Button
+                              variant="destructive"
+                              size="icon"
                               className="absolute top-2 right-2 h-6 w-6"
                               onClick={() => removeFromCompare(car.id)}
                             >
@@ -62,7 +62,7 @@ const Compare = () => {
                         </div>
                       </TableHead>
                     ))}
-                    {compareList.length < 3 && (
+                    {compareList.length < 3 ? (
                       <TableHead className="align-middle text-center p-8 border-l border-dashed border-white/10">
                         <div className="flex flex-col items-center justify-center opacity-50 h-[200px]">
                           <p className="mb-4">Add another car</p>
@@ -73,6 +73,14 @@ const Compare = () => {
                           </Link>
                         </div>
                       </TableHead>
+                    ) : (
+                      <TableHead className="align-middle text-center p-8 border-l border-dashed border-white/10">
+                        <div className="flex flex-col items-center justify-center h-[200px] opacity-40">
+                          <Lock className="w-6 h-6 mb-2" />
+                          <p className="text-sm">Max 3 cars</p>
+                          <p className="text-xs text-muted-foreground mt-1">Remove one to add another</p>
+                        </div>
+                      </TableHead>
                     )}
                   </TableRow>
                 </TableHeader>
@@ -80,25 +88,25 @@ const Compare = () => {
                   <TableRow className="hover:bg-transparent">
                     <TableCell className="font-medium text-muted-foreground">Price</TableCell>
                     {compareList.map(car => (
-                      <TableCell key={car.id} className="text-center text-lg">{car.price}</TableCell>
+                      <TableCell key={car.id} className="text-center text-lg">{formatPrice(car.price)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow className="bg-secondary/20 hover:bg-secondary/30">
                     <TableCell className="font-medium text-muted-foreground">Horsepower</TableCell>
                     {compareList.map(car => (
-                      <TableCell key={car.id} className="text-center font-bold text-xl">{car.horsepower}</TableCell>
+                      <TableCell key={car.id} className="text-center font-bold text-xl">{formatHP(car.horsepower)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow className="hover:bg-transparent">
                     <TableCell className="font-medium text-muted-foreground">Top Speed</TableCell>
                     {compareList.map(car => (
-                      <TableCell key={car.id} className="text-center">{car.topSpeed}</TableCell>
+                      <TableCell key={car.id} className="text-center">{formatSpeed(car.topSpeed)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow className="bg-secondary/20 hover:bg-secondary/30">
                     <TableCell className="font-medium text-muted-foreground">0-60 mph</TableCell>
                     {compareList.map(car => (
-                      <TableCell key={car.id} className="text-center">{car.acceleration}</TableCell>
+                      <TableCell key={car.id} className="text-center">{formatAcc(car.acceleration)}</TableCell>
                     ))}
                   </TableRow>
                   <TableRow className="hover:bg-transparent">
@@ -108,15 +116,15 @@ const Compare = () => {
                     ))}
                   </TableRow>
                   <TableRow className="bg-secondary/20 hover:bg-secondary/30">
-                    <TableCell className="font-medium text-muted-foreground">Differences</TableCell>
+                    <TableCell className="font-medium text-muted-foreground">Highlights</TableCell>
                     {compareList.map(car => {
-                      const maxHP = Math.max(...compareList.map(c => parseHP(c.horsepower)));
-                      const minAcc = Math.min(...compareList.map(c => parseAcc(c.acceleration)));
-                      const maxSpeed = Math.max(...compareList.map(c => parseSpeed(c.topSpeed)));
-                      
-                      const isFastest = parseSpeed(car.topSpeed) === maxSpeed;
-                      const isQuickest = parseAcc(car.acceleration) === minAcc;
-                      const isMostPowerful = parseHP(car.horsepower) === maxHP;
+                      const maxHP = Math.max(...compareList.map(c => c.horsepower));
+                      const minAcc = Math.min(...compareList.map(c => c.acceleration));
+                      const maxSpeed = Math.max(...compareList.map(c => c.topSpeed));
+
+                      const isFastest = car.topSpeed === maxSpeed;
+                      const isQuickest = car.acceleration === minAcc;
+                      const isMostPowerful = car.horsepower === maxHP;
 
                       return (
                         <TableCell key={car.id} className="text-center">

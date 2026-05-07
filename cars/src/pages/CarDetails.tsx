@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { cars } from '@/data/cars';
 import { Button } from '@/components/ui/button';
@@ -7,6 +6,7 @@ import { ArrowLeft, Gauge, Timer, Zap, Cog, Activity } from 'lucide-react';
 import CarCard from '@/components/CarCard';
 import Navbar from '@/components/Navbar';
 import { useCar } from '@/context/CarContext';
+import { formatPrice, formatSpeed, formatHP, formatAcc } from '@/lib/utils';
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -15,12 +15,10 @@ const CarDetails = () => {
 
   if (!car) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Car Not Found</h1>
-          <Link to="/">
-            <Button>Return Home</Button>
-          </Link>
+          <Link to="/"><Button>Return Home</Button></Link>
         </div>
       </div>
     );
@@ -35,7 +33,7 @@ const CarDetails = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-24 pb-12 px-4 container mx-auto">
         <Link to="/" className="inline-block mb-6">
           <Button variant="ghost" size="sm" className="gap-2">
@@ -47,9 +45,9 @@ const CarDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="relative group">
             <div className="aspect-[16/10] overflow-hidden rounded-xl border border-white/10 shadow-2xl">
-              <img 
-                src={car.image} 
-                alt={car.name} 
+              <img
+                src={car.image}
+                alt={car.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -62,13 +60,13 @@ const CarDetails = () => {
               </Badge>
               <Badge variant="secondary">{car.category}</Badge>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight leading-none">
               {car.name}
             </h1>
-            
+
             <p className="text-2xl text-muted-foreground mb-8 font-light">
-              {car.price}
+              {formatPrice(car.price)}
             </p>
 
             <p className="text-lg leading-relaxed mb-8 text-neutral-300">
@@ -76,7 +74,7 @@ const CarDetails = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button 
+              <Button
                 onClick={() => toggleFavorite(car.id, car.name)}
                 variant={isFavorite ? "default" : "outline"}
                 className="gap-2"
@@ -94,19 +92,19 @@ const CarDetails = () => {
                 <div className="flex items-center gap-2 text-muted-foreground mb-1">
                   <Gauge className="w-4 h-4" /> Top Speed
                 </div>
-                <div className="text-xl font-bold">{car.topSpeed}</div>
+                <div className="text-xl font-bold">{formatSpeed(car.topSpeed)}</div>
               </div>
               <div className="bg-secondary/20 p-4 rounded-lg border border-white/5">
                 <div className="flex items-center gap-2 text-muted-foreground mb-1">
                   <Timer className="w-4 h-4" /> 0-60 mph
                 </div>
-                <div className="text-xl font-bold">{car.acceleration}</div>
+                <div className="text-xl font-bold">{formatAcc(car.acceleration)}</div>
               </div>
               <div className="bg-secondary/20 p-4 rounded-lg border border-white/5">
                 <div className="flex items-center gap-2 text-muted-foreground mb-1">
                   <Zap className="w-4 h-4" /> Power
                 </div>
-                <div className="text-xl font-bold">{car.horsepower}</div>
+                <div className="text-xl font-bold">{formatHP(car.horsepower)}</div>
               </div>
               <div className="bg-secondary/20 p-4 rounded-lg border border-white/5">
                 <div className="flex items-center gap-2 text-muted-foreground mb-1">
@@ -122,7 +120,7 @@ const CarDetails = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Activity className="w-6 h-6 text-primary" /> 
+              <Activity className="w-6 h-6 text-primary" />
               Performance Characteristics
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -134,7 +132,7 @@ const CarDetails = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="p-6 bg-secondary/10 rounded-xl border border-white/5">
             <h3 className="text-xl font-bold mb-4">Technical Specs</h3>
             <div className="space-y-4">
@@ -148,7 +146,15 @@ const CarDetails = () => {
               </div>
               <div className="flex justify-between border-b border-white/10 pb-2">
                 <span className="text-muted-foreground">Horsepower</span>
-                <span className="font-medium text-right">{car.horsepower}</span>
+                <span className="font-medium text-right">{formatHP(car.horsepower)}</span>
+              </div>
+              <div className="flex justify-between border-b border-white/10 pb-2">
+                <span className="text-muted-foreground">Top Speed</span>
+                <span className="font-medium text-right">{formatSpeed(car.topSpeed)}</span>
+              </div>
+              <div className="flex justify-between pb-2">
+                <span className="text-muted-foreground">0-60 mph</span>
+                <span className="font-medium text-right">{formatAcc(car.acceleration)}</span>
               </div>
             </div>
           </div>
@@ -160,11 +166,11 @@ const CarDetails = () => {
             <h2 className="text-3xl font-bold mb-8">Similar Vehicles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {similarCars.map((similarCar) => (
-                <CarCard 
-                  key={similarCar.id} 
-                  car={similarCar} 
-                  playingId={null} 
-                  onPlay={() => {}} 
+                <CarCard
+                  key={similarCar.id}
+                  car={similarCar}
+                  playingId={null}
+                  onPlay={() => {}}
                 />
               ))}
             </div>

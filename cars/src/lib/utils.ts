@@ -5,19 +5,18 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function parsePrice(price: string): number {
-  return parseInt(price.replace(/[^0-9]/g, "")) || 0;
+export function formatPrice(price: number): string {
+  return `$${price.toLocaleString()}`;
 }
 
-export function parseSpeed(speed: string): number {
-  return parseInt(speed.replace(/[^0-9]/g, "")) || 0;
+export function formatSpeed(speed: number): string {
+  return `${speed} mph`;
 }
 
-export function parseHP(hp: string): number {
-  return parseInt(hp.replace(/[^0-9]/g, "")) || 0;
+export function formatHP(hp: number): string {
+  return `${hp.toLocaleString()} HP`;
 }
 
-export function parseAcc(acc: string): number {
-  const match = acc.match(/(\d+\.\d+|\d+)/);
-  return match ? parseFloat(match[0]) : 0;
+export function formatAcc(acc: number): string {
+  return `${acc}s (0-60mph)`;
 }
