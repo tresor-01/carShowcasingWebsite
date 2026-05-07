@@ -3,7 +3,7 @@ import { Car } from '@/data/cars';
 import { useToast } from '@/hooks/use-toast';
 
 interface CarContextType {
-  favorites: string[]; // Store IDs
+  favorites: string[];
   toggleFavorite: (id: string, name: string) => void;
   compareList: Car[];
   addToCompare: (car: Car) => void;
@@ -20,24 +20,27 @@ const CarContext = createContext<CarContextType | undefined>(undefined);
 
 export const CarProvider = ({ children }: { children: ReactNode }) => {
   const { toast } = useToast();
-  
-  // Favorites State
+
   const [favorites, setFavorites] = useState<string[]>(() => {
-    const saved = localStorage.getItem('carFavorites');
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem('supercar-showcase-favorites');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
   });
 
-  // Compare State
   const [compareList, setCompareList] = useState<Car[]>([]);
-  
-  // Filter States
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('Default');
   const [selectedBrand, setSelectedBrand] = useState('All');
 
-  // Persist Favorites
   useEffect(() => {
-    localStorage.setItem('carFavorites', JSON.stringify(favorites));
+    try {
+      localStorage.setItem('supercar-showcase-favorites', JSON.stringify(favorites));
+    } catch {
+      // Storage unavailable — favorites won't persist this session
+    }
   }, [favorites]);
 
   const toggleFavorite = (id: string, name: string) => {
